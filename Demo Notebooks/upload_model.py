@@ -38,7 +38,7 @@ if validation_indices:
         # set correct ID and description
         ID = f"endemic_channel-validation_{validx}"
         description = f"Validation {validx} (Cornell_BentoLab - NegBinom Endemic Channel). Authored by Tijs W. Alleman & Ana I. Bento."
-        commit = "49b7a28eecd946e3609d94d2bafe231d74b87070"
+        commit = "52f716fff9d2302a0704cc840cb7cde6758c1a69"
         # load validation experiment data
         forecast = pd.read_csv(f'../data/interim/model_output/sprint_{challenge_year}/{ID}.csv', index_col=0)
         # get the ufs..
@@ -50,7 +50,7 @@ if validation_indices:
             # push the prediction
             res = mosq.upload_prediction(
                 api_key = api_key,
-                repository = 'https://github.com/anabento/3rd_imdc_Cornell_BentoLab',
+                repository = 'https://github.com/BentoLab-DiseaseDynamics/3rd_imdc_Cornell_BentoLab',
                 description = description, 
                 commit = commit,
                 disease = 'A90', # dengue
