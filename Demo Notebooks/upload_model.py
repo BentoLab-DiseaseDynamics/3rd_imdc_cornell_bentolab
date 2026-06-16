@@ -50,7 +50,7 @@ if validation_indices:
             # push the prediction
             res = mosq.upload_prediction(
                 api_key = api_key,
-                repository = 'https://github.com/BentoLab-DiseaseDynamics/3rd_imdc_Cornell_BentoLab',
+                repository = 'BentoLab-DiseaseDynamics/3rd_imdc_cornell_bentolab',
                 description = description, 
                 commit = commit,
                 disease = 'A90', # dengue
