@@ -68,6 +68,7 @@ def negbinom_log_likelihood(params, x, weights):
 # load data
 data = pd.read_csv('../data/raw/dengue.csv.gz', compression='gzip', dtype={'epiweek': str})
 
+
 # extract index 
 index_ufs = data[['uf', 'uf_code']].drop_duplicates().reset_index()[['uf', 'uf_code']]
 
@@ -133,7 +134,7 @@ results = pd.concat(results, axis=0)
 
 # convert start- and end epiweek of the "prediction" to a daterange
 start_date = Week(start_predict_year, start_predict_epiweek).startdate()
-end_date = Week(end_predict_year, end_predict_epiweek).enddate()
+end_date = Week(end_predict_year, end_predict_epiweek).startdate()
 dates = pd.date_range(start=start_date, end=end_date, freq='W-SUN')
 # pre-allocate an output dataframe containing the cartesian product of all spatial units and dates as index & the quantiles/median as columns
 index = pd.MultiIndex.from_product([dates, ufs], names=['date', 'adm_1'])
