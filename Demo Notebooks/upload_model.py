@@ -29,7 +29,7 @@ api_key = ...
 #####################
 
 # define validation experiment indices..
-validation_indices = [1, 2, 3, 4] # None (forecast), or [1, 2, 3, 4] (validation)
+validation_indices = None # None (forecast), or [1, 2, 3, 4] (validation)
 
 # validation
 if validation_indices:
