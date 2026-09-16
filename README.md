@@ -32,6 +32,8 @@ Setup/update the `environment`: All dependencies needed to run the scripts are c
   conda activate DENGUE_SPRINT
   ```
 
+To submit the model, make sure to install the `mosqlient` package (`pip install mosqlient`) in conda environment.
+
 ## Data and Variables
 
 Only the `dengue.csv.gz` file (lives in `~/data/raw/dengue.csv.gz`) made available by the mosqlimate project was used. The dataset, along with an explanation of the variables in it, can be retrieved using the instructions under '2 - Using FTPWeb' on https://sprint.mosqlimate.org/data/.
@@ -59,7 +61,7 @@ The fitted negative binomial was used to generate quantiles using the `scipy.nbi
 
 ## How to submit (2026)
 
-- Pip install `mosqlient` package in conda environment.
-- Retrieve API key from Ana's Mosqclimate account. Log into https://mosqlimate.org using GH of @anabento. Go to "Auth" tab in profile overview.
-- Paste API key in the submission script `~/Demo Notebooks/upload_model.py`.
+- Generate the validation or forecast using `~/src/simulate-endemic_channel.py`. Make sure to change the `challenge_year` and `validation_idx` to the appropriate values. Commit the results to a GH feature branch and copy the commit ID.
+- Retrieve API key from the group's Mosqclimate account. Log into https://mosqlimate.org through GH (by logging in as BentoLab-DiseaseDynamics). Go to "Auth" tab in profile overview.
+- Paste API key in the submission script `~/Demo Notebooks/upload_model.py`, paste the `commit` ID containing the forecast results, and make sure to adjust the variable `validation_indices`.
 - Run `~/Demo Notebooks/upload_model.py` to upload the model and then the forecast. 
